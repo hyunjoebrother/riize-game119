@@ -18,13 +18,17 @@ interface Question {
 }
 
 const RiizeQuiz: React.FC = () => {
+  const finger0 = useGLTF("./models/finger0.glb");
+  const finger1 = useGLTF("./models/finger1.glb");
+  const finger2 = useGLTF("./models/finger2.glb");
+  const finger3 = useGLTF("./models/finger3.glb");
   const finger4 = useGLTF("./models/finger4.glb");
   const finger5 = useGLTF("./models/finger5.glb");
 
   const [questions] = useState<Question[]>([
     {
       id: 1,
-      content: "라이즈의 데뷔곡은 Siren이다",
+      content: "FFFF첫!만남!은 너무 어!려!워!",
       answer: false,
       info: "라이즈 데뷔곡은 Get A Guitar랍니당",
     },
@@ -177,34 +181,29 @@ const RiizeQuiz: React.FC = () => {
       </div>
       <div className="my-16">
         <div className="w-96 h-96 flex items-center justify-center">
-          {incorrectCount === 0 && (
-            <Canvas camera={{ position: [6, 10, -32] }}>
-              <OrbitControls />
-              <ambientLight intensity={3} />
-              <Environment preset="sunset" />
+          <Canvas camera={{ position: [6, 10, -32] }}>
+            <OrbitControls />
+            <ambientLight intensity={3} />
+            <Environment preset="sunset" />
+            {incorrectCount === 0 && (
               <primitive scale={9} object={finger5.scene} />
-            </Canvas>
-          )}
-          {incorrectCount === 1 && (
-            <Canvas camera={{ position: [6, 10, -32] }}>
-              <OrbitControls />
-              <ambientLight intensity={3} />
-              <Environment preset="sunset" />
+            )}
+            {incorrectCount === 1 && (
               <primitive scale={9} object={finger4.scene} />
-            </Canvas>
-          )}
-          {incorrectCount === 2 && (
-            <img className="w-80 h-80" src={finger3} alt="" />
-          )}
-          {incorrectCount === 3 && (
-            <img className="w-80 h-80" src={finger2} alt="" />
-          )}
-          {incorrectCount === 4 && (
-            <img className="w-80 h-80" src={finger1} alt="" />
-          )}
-          {incorrectCount === 5 && (
-            <img className="w-80 h-80" src={finger0} alt="" />
-          )}
+            )}
+            {incorrectCount === 2 && (
+              <primitive scale={9} object={finger3.scene} />
+            )}
+            {incorrectCount === 3 && (
+              <primitive scale={9} object={finger2.scene} />
+            )}
+            {incorrectCount === 4 && (
+              <primitive scale={9} object={finger1.scene} />
+            )}
+            {incorrectCount === 5 && (
+              <primitive scale={9} object={finger0.scene} />
+            )}
+          </Canvas>
         </div>
       </div>
       <SelectFooter onNextQuestion={handleAnswerSelection} />
