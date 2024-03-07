@@ -3,10 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import SelectFooter from "../../components/SelectFooter/SelectFooter";
-import finger0 from "../../assets/fingers/0.jpg";
-import finger1 from "../../assets/fingers/1.jpg";
-import finger2 from "../../assets/fingers/2.jpg";
-import finger3 from "../../assets/fingers/3.jpg";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 
@@ -104,6 +100,7 @@ const RiizeQuiz: React.FC = () => {
     ).length;
     setIncorrectCount(incorrectCount);
     console.log("틀린 문항 수: ", incorrectCount);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers, currentQuestionIndex]);
 
   useEffect(() => {
@@ -140,6 +137,7 @@ const RiizeQuiz: React.FC = () => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showPopup]);
 
   useEffect(() => {
@@ -148,6 +146,7 @@ const RiizeQuiz: React.FC = () => {
       setShowMainPopup(true);
       setMainPopupContent("아쉽습니다.");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [incorrectCount]);
 
   const handleAnswerSelection = (selectedAnswer: boolean) => {
