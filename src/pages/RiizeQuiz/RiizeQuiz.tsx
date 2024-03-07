@@ -3,6 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import SelectFooter from "../../components/SelectFooter/SelectFooter";
+import finger0 from "../../assets/fingers/0.jpg";
+import finger1 from "../../assets/fingers/1.jpg";
+import finger2 from "../../assets/fingers/2.jpg";
+import finger3 from "../../assets/fingers/3.jpg";
+import finger4 from "../../assets/fingers/4.jpg";
+import finger5 from "../../assets/fingers/5.jpg";
 
 interface Question {
   id: number;
@@ -167,7 +173,26 @@ const RiizeQuiz: React.FC = () => {
         />
       </div>
       <div className="my-16">
-        <div className="w-96 h-96 bg-red-200">손가락 에셋</div>
+        <div className="w-96 h-96 flex items-center justify-center">
+          {incorrectCount === 0 && (
+            <img className="w-80 h-80" src={finger5} alt="" />
+          )}
+          {incorrectCount === 1 && (
+            <img className="w-80 h-80" src={finger4} alt="" />
+          )}
+          {incorrectCount === 2 && (
+            <img className="w-80 h-80" src={finger3} alt="" />
+          )}
+          {incorrectCount === 3 && (
+            <img className="w-80 h-80" src={finger2} alt="" />
+          )}
+          {incorrectCount === 4 && (
+            <img className="w-80 h-80" src={finger1} alt="" />
+          )}
+          {incorrectCount === 5 && (
+            <img className="w-80 h-80" src={finger0} alt="" />
+          )}
+        </div>
       </div>
       <SelectFooter onNextQuestion={handleAnswerSelection} />
       {showPopup && (
