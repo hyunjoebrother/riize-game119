@@ -7,8 +7,8 @@ import finger0 from "../../assets/fingers/0.jpg";
 import finger1 from "../../assets/fingers/1.jpg";
 import finger2 from "../../assets/fingers/2.jpg";
 import finger3 from "../../assets/fingers/3.jpg";
-import finger4 from "../../assets/fingers/4.jpg";
-import finger5 from "../../assets/fingers/5.jpg";
+import { Canvas } from "@react-three/fiber";
+import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
 
 interface Question {
   id: number;
@@ -18,18 +18,21 @@ interface Question {
 }
 
 const RiizeQuiz: React.FC = () => {
+  const finger4 = useGLTF("./models/finger4.glb");
+  const finger5 = useGLTF("./models/finger5.glb");
+
   const [questions] = useState<Question[]>([
     {
       id: 1,
-      content: "FFFf라이즈 사이렌은 데뷔곡이다",
+      content: "라이즈의 데뷔곡은 Siren이다",
       answer: false,
-      info: "이러이러해서 111정답은 이거랍니당",
+      info: "라이즈 데뷔곡은 Get A Guitar랍니당",
     },
     {
       id: 2,
       content: "TTT겟어기타의 기타는 일렉이다",
       answer: true,
-      info: "이러이러해서 22정답은 이거랍니당",
+      info: "나도 모름 샘플 답변임",
     },
     {
       id: 3,
@@ -175,10 +178,20 @@ const RiizeQuiz: React.FC = () => {
       <div className="my-16">
         <div className="w-96 h-96 flex items-center justify-center">
           {incorrectCount === 0 && (
-            <img className="w-80 h-80" src={finger5} alt="" />
+            <Canvas camera={{ position: [6, 10, -32] }}>
+              <OrbitControls />
+              <ambientLight intensity={3} />
+              <Environment preset="sunset" />
+              <primitive scale={9} object={finger5.scene} />
+            </Canvas>
           )}
           {incorrectCount === 1 && (
-            <img className="w-80 h-80" src={finger4} alt="" />
+            <Canvas camera={{ position: [6, 10, -32] }}>
+              <OrbitControls />
+              <ambientLight intensity={3} />
+              <Environment preset="sunset" />
+              <primitive scale={9} object={finger4.scene} />
+            </Canvas>
           )}
           {incorrectCount === 2 && (
             <img className="w-80 h-80" src={finger3} alt="" />
