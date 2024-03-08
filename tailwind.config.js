@@ -12,6 +12,10 @@ module.exports = {
         lg: { min: "1024px" }, // Laptop
         xl: { min: "1280px" }, // Desktop
       },
+      fontFamily: {
+        MainFont: ["MainFont_Regular"],
+        MainFontItalic: ["MainFont_Italic"],
+      },
     },
   },
   plugins: [],

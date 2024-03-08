@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "MainFont_Regular";
+  font-weight: normal;
+  src: url("../assets/fonts/RacingSansOne-Regular.ttf") format("truetype");
+}
