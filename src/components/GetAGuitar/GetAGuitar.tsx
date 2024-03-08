@@ -19,14 +19,13 @@ const GetAGuitar: React.FC = () => {
 
   return (
     <div className="w-full h-auto bg-black flex flex-col m-auto items-center">
-      <div className="w-full h-64 flex items-center justify-center">
+      <div className="w-full h-full lg:p-24 flex items-center justify-center">
         <Guitar
           strings={strings}
           onPlay={play}
           onChange={handleChange}
           playOnHover
         />
-        ,
       </div>
     </div>
   );
