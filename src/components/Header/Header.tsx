@@ -1,7 +1,7 @@
 import React from "react";
 // import { useTranslation, Trans } from 'react-i18next';
 // import { useLanguage } from '../Translation/languageContext';
-import logo from "../../assets/images/red.png";
+import logo from "../../assets/images/textLogo.svg";
 
 const Header = () => {
   //   const { language, changeLanguage } = useLanguage();
@@ -19,7 +19,7 @@ const Header = () => {
         <a href="/">
           <img
             src={logo}
-            alt="Say The Unit"
+            alt="RIIZE GAME119"
             className="2xs:w-32 2xs:h-7 xs:w-36 xs:h-8 2sm:w-[172px] 2sm:h-[38px] sm:w-[200px] sm:h-11 tb:w-[236px] tb:h-[52px] lg:w-[280px] lg:h-[62px] cursor-pointer"
           />
         </a>
