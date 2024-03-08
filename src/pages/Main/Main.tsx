@@ -16,7 +16,7 @@ const Main: React.FC = () => {
 
   let options = {
     activeClass: "active",
-    anchors: ['sectionOne', 'sectionTwo'],
+    anchors: ["sectionOne", "sectionTwo"],
     arrowNavigation: false,
     className: "SectionContainer",
     delay: 800,
@@ -40,7 +40,7 @@ const Main: React.FC = () => {
         <Header />
         <Section>
           <section className="flex flex-col gap-6 items-center">
-            <div className="w-screen h-screen lg:h-[560px] flex items-center justify-center">
+            <div className="w-screen h-screen 2xs:h-[440px] xs:h-[500px] 2sm:h-[500px] sm:h-[480px] tb:h-[500px] lg:h-[560px] flex items-center justify-center">
               {isLoaded && (
                 <Canvas camera={{ position: [40, 16, 18] }}>
                   <OrbitControls />
@@ -48,7 +48,7 @@ const Main: React.FC = () => {
                 </Canvas>
               )}
             </div>
-            <button className="lg:my-24 w-56 h-14 lg:w-80 lg:h-24 flex flex-col justify-center items-center text-2xl lg:text-4xl rounded-2xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
+            <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
               <a href="/riize">PLAY GAME119</a>
             </button>
             {/* <button className="lg:my-24 w-56 h-14 lg:w-80 lg:h-24 flex flex-col justify-center items-center text-2xl lg:text-4xl rounded-2xl lg:rounded-3xl font-MainFont bg-blue-700 text-white">
@@ -57,20 +57,22 @@ const Main: React.FC = () => {
           </section>
         </Section>
         <Section>
-          <section className="lg:mt-12 lg:px-16 w-full h-screen flex flex-col lg:flex-row lg:gap-3 items-center justify-center">
-            <div className="w-full lg:w-1/2 lg:h-64 my-12 flex flex-col items-center justify-start">
-              <h3 className="text-4xl text-white mb-24 font-MainFont">
+          <section className="2xs:mt-0 xs:mt-0 2sm:mt-0 sm:mt-0 lg:mt-12 lg:px-16 w-full h-screen flex flex-col lg:flex-row 2xs:gap-0 xs:gap-6 2sm:gap-14 sm:gap-6 tb:gap-16 lg:gap-3 items-center justify-center">
+            <div className="w-full lg:w-1/2 h-auto lg:h-64 my-12 flex flex-col items-center justify-start">
+              <h3 className="2xs:text-xl xs:text-2xl 2sm:text-2xl sm:text-3xl text-4xl text-white 2xs:mb-4 xs:mb-4 2sm:mb-6 sm:mb-6 tb:mb-10 lg:mb-24 font-MainFont">
                 🎸 Get A Guitar 🎸
               </h3>
-              <GetAGuitar />
+              <div className="w-full flex flex-col 2xs:items-start xs:items-start sm:items-start tb:items-start">
+                <GetAGuitar />
+              </div>
             </div>
-            <div className="w-full lg:w-1/2 lg:h-64 my-12 flex flex-col items-center justify-start">
+            <div className="w-full lg:w-1/2 lg:h-64 lg:my-12 flex flex-row lg:flex-col lg:items-center justify-around lg:justify-start">
               <div className="flex flex-col">
-                <div>
-                  <h3 className="text-4xl text-white mb-12 font-MainFont">
+                <div className="2xs:flex 2xs:flex-col 2xs:items-center xs:flex xs:flex-col xs:items-center 2sm:flex 2sm:flex-col 2sm:items-center sm:flex sm:flex-col sm:items-center">
+                  <h3 className="2xs:text-xl xs:text-2xl 2sm:text-2xl sm:text-3xl text-4xl text-white 2xs:mb-4 xs:mb-4 2sm:mb-6 sm:mb-6 tb:mb-10 mb-12 font-MainFont">
                     🌟 Memories 🌟
                   </h3>
-                  <ul className="flex flex-col lg:flex-row justify-center list-none gap-4 lg:gap-6">
+                  <ul className="flex flex-row justify-center list-none 2xs:gap-1 xs:gap-1 2sm:gap-3 gap-4 lg:gap-6">
                     <li>
                       <a
                         href="https://www.instagram.com/riize_official/"
@@ -126,8 +128,8 @@ const Main: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="lg:mt-24 xl:mt-36">
-                <h3 className="mb-12 text-4xl text-white font-MainFont">
+              <div className="lg:mt-24 xl:mt-36 2xs:flex 2xs:flex-col 2xs:items-center xs:flex xs:flex-col xs:items-center 2sm:flex 2sm:flex-col 2sm:items-center sm:flex sm:flex-col sm:items-center">
+                <h3 className="2xs:mb-4 xs:mb-4 2sm:mb-6 sm:mb-6 tb:mb-10 mb-12 2xs:text-xl xs:text-2xl 2sm:text-2xl sm:text-3xl text-4xl text-white font-MainFont">
                   🚨 Siren 🚨
                 </h3>
                 <a
@@ -135,12 +137,27 @@ const Main: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img className="w-64 h-48" src={siren} alt="" />
+                  <img
+                    className="2xs:w-14 2xs:h-10 xs:w-18 xs:h-12 2sm:w-22 2sm:h-16 sm:w-28 sm:h-22 tb:w-30 tb:h-24 lg:w-64 lg:h-48"
+                    src={siren}
+                    alt=""
+                  />
                 </a>
               </div>
             </div>
+            <div>
+              <h3 className="lg:hidden 2xs:mt-6 2xs:mb-14 xs:mt-10 xs:mb-18 2sm:mt-8 2sm:mb-24 sm:mt-10 sm:mb-18 mt-12 mb-20 2xs:text-[10px] xs:text-xs 2sm:text-xs sm:text-sm text-lg text-white font-MainFont">
+                <a
+                  href="https://linkbio.co/6010904ydlS94"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  CONTACT MEI
+                </a>
+              </h3>
+            </div>
           </section>
-          <h3 className="lg:mt-24 lg:mb-12 lg:text-xl text-white font-MainFont">
+          <h3 className="2xs:hidden xs:hidden 2sm:hidden sm:hidden tb:hidden mt-8 lg:mt-24 lg:mb-12 text-lg lg:text-xl text-white font-MainFont">
             <a
               href="https://linkbio.co/6010904ydlS94"
               rel="noreferrer"
