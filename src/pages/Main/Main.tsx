@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, startTransition } from "react";
 import Header from "../../components/Header/Header";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -10,17 +10,26 @@ import GetAGuitar from "../../components/GetAGuitar/GetAGuitar";
 import siren from "../../assets/images/siren.gif";
 
 const Main: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const riizeObj = useGLTF("./models/riizeLogo.glb");
+
+  React.useEffect(() => {
+    startTransition(() => {
+      setIsLoaded(true);
+    });
+  }, []);
 
   return (
     <div className="w-full h-full bg-black flex flex-col m-auto items-center">
       <Header />
       <section className="flex flex-col gap-6 items-center">
         <div className="w-screen h-screen lg:h-[560px] flex items-center justify-center">
-          <Canvas camera={{ position: [40, 16, 18] }}>
-            <OrbitControls />
-            <primitive scale={16} object={riizeObj.scene} />
-          </Canvas>
+          {isLoaded && (
+            <Canvas camera={{ position: [40, 16, 18] }}>
+              <OrbitControls />
+              <primitive scale={16} object={riizeObj.scene} />
+            </Canvas>
+          )}
         </div>
         <button className="lg:my-24 w-56 h-14 lg:w-80 lg:h-24 flex flex-col justify-center items-center text-2xl lg:text-4xl rounded-2xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
           <a href="/riize">PLAY GAME119</a>
