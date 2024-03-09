@@ -1,10 +1,9 @@
-import React, { useState, useEffect, startTransition } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import SelectFooter from "../../components/SelectFooter/SelectFooter";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
-import cat from "../../assets/images/catGuitar.gif";
 
 interface Question {
   id: number;
@@ -14,16 +13,6 @@ interface Question {
 }
 
 const RiizeQuiz: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    startTransition(() => {
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1200);
-    });
-  }, []);
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fingerObj, setFingerObj] = useState<any>(null);
 
@@ -35,21 +24,18 @@ const RiizeQuiz: React.FC = () => {
   const finger5 = useGLTF("./models/finger5.glb");
 
   useEffect(() => {
-    startTransition(() => {
-      if (incorrectCount === 0) {
-        setFingerObj(finger5);
-      } else if (incorrectCount === 1) {
-        setFingerObj(finger4);
-      } else if (incorrectCount === 2) {
-        setFingerObj(finger3);
-      } else if (incorrectCount === 3) {
-        setFingerObj(finger2);
-      } else if (incorrectCount === 4) {
-        setFingerObj(finger1);
-      } else if (incorrectCount === 5) {
-        setFingerObj(finger0);
-      }
-    });
+    setFingerObj(finger5);
+    // else if (incorrectCount === 1) {
+    //   setFingerObj(finger4);
+    // } else if (incorrectCount === 2) {
+    //   setFingerObj(finger3);
+    // } else if (incorrectCount === 3) {
+    //   setFingerObj(finger2);
+    // } else if (incorrectCount === 4) {
+    //   setFingerObj(finger1);
+    // } else if (incorrectCount === 5) {
+    //   setFingerObj(finger0);
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -130,9 +116,7 @@ const RiizeQuiz: React.FC = () => {
     const incorrectCount = userAnswers.filter(
       (userAnswer, index) => userAnswer !== questions[index].answer
     ).length;
-    startTransition(() => {
-      setIncorrectCount(incorrectCount);
-    });
+    setIncorrectCount(incorrectCount);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers, currentQuestionIndex]);
 
@@ -213,39 +197,29 @@ const RiizeQuiz: React.FC = () => {
       </div>
       <div className="2xs:mt-8 xs:mt-6 mt-10 tb:mt-12 lg:mt-20 lg:mb-4">
         <div className="2xs:w-[264px] 2xs:h-[314px] xs:w-[336px] xs:h-[372px] 2sm:w-[348px] 2sm:h-[430px] sm:w-[400px] sm:h-[440px] tb:w-[420px] tb:h-[480px] lg:w-[360px] lg:h-[400px] xl:w-[480px] xl:h-[500px] flex items-center justify-center">
-          {!isLoaded ? (
-            <div className="w-36 h-36 tb:w-44 tb:h-44 lg:w-48 lg:h-48 flex justify-center items-center rounded-full bg-white">
-              <img
-                className="w-24 h-24 tb:w-36 tb:h-36 lg:w-40 lg:h-40"
-                src={cat}
-                alt=""
-              />
-            </div>
-          ) : (
-            <Canvas camera={{ position: [6, 10, -32] }}>
-              <OrbitControls />
-              <ambientLight intensity={3} />
-              <Environment preset="sunset" />
-              {incorrectCount === 0 && (
-                <primitive scale={9} object={finger5.scene} />
-              )}
-              {incorrectCount === 1 && (
-                <primitive scale={9} object={finger4.scene} />
-              )}
-              {incorrectCount === 2 && (
-                <primitive scale={9} object={finger3.scene} />
-              )}
-              {incorrectCount === 3 && (
-                <primitive scale={9} object={finger2.scene} />
-              )}
-              {incorrectCount === 4 && (
-                <primitive scale={9} object={finger1.scene} />
-              )}
-              {incorrectCount === 5 && (
-                <primitive scale={9} object={finger0.scene} />
-              )}
-            </Canvas>
-          )}
+          <Canvas camera={{ position: [6, 10, -32] }}>
+            <OrbitControls />
+            <ambientLight intensity={3} />
+            <Environment preset="sunset" />
+            {incorrectCount === 0 && (
+              <primitive scale={9} object={finger5.scene} />
+            )}
+            {incorrectCount === 1 && (
+              <primitive scale={9} object={finger4.scene} />
+            )}
+            {incorrectCount === 2 && (
+              <primitive scale={9} object={finger3.scene} />
+            )}
+            {incorrectCount === 3 && (
+              <primitive scale={9} object={finger2.scene} />
+            )}
+            {incorrectCount === 4 && (
+              <primitive scale={9} object={finger1.scene} />
+            )}
+            {incorrectCount === 5 && (
+              <primitive scale={9} object={finger0.scene} />
+            )}
+          </Canvas>
         </div>
       </div>
       <SelectFooter onNextQuestion={handleAnswerSelection} />
