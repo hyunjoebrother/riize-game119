@@ -37,10 +37,6 @@ const Main: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleQuiz = () => {
-    window.location.href = "/riize";
-  };
-
   return (
     <SectionsContainer {...options}>
       <div className="w-full h-full bg-black flex flex-col m-auto items-center">
@@ -55,11 +51,8 @@ const Main: React.FC = () => {
                 </Canvas>
               )}
             </div>
-            <button
-              onClick={handleQuiz}
-              className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white"
-            >
-              PLAY GAME119
+            <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
+              <a href="/riize">PLAY GAME119</a>
             </button>
             {/* <button className="lg:my-24 w-56 h-14 lg:w-80 lg:h-24 flex flex-col justify-center items-center text-2xl lg:text-4xl rounded-2xl lg:rounded-3xl font-MainFont bg-blue-700 text-white">
           <a href="/riize">PLAY ONLINE K-HANDGAME</a>
