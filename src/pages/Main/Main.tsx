@@ -17,7 +17,7 @@ const Main: React.FC = () => {
 
   let options = {
     activeClass: "active",
-    anchors: ["sectionOne", "sectionTwo"],
+    anchors: ["rise", "realize"],
     arrowNavigation: false,
     className: "SectionContainer",
     delay: 800,
