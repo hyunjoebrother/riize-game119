@@ -130,7 +130,9 @@ const RiizeQuiz: React.FC = () => {
     const incorrectCount = userAnswers.filter(
       (userAnswer, index) => userAnswer !== questions[index].answer
     ).length;
-    setIncorrectCount(incorrectCount);
+    startTransition(() => {
+      setIncorrectCount(incorrectCount);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers, currentQuestionIndex]);
 
