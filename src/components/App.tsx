@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "../pages/Main/Main";
 import RiizeQuiz from "../pages/RiizeQuiz/RiizeQuiz";
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
