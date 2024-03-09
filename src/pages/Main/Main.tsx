@@ -12,7 +12,8 @@ import siren from "../../assets/images/siren.gif";
 
 const Main: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const riizeObj = useGLTF("./models/riizeLogo.glb");
+  const [riizeObj, setRiizeObj] = useState<any>(null);
+  const loadedObj = useGLTF("./models/riizeLogo.glb");
 
   let options = {
     activeClass: "active",
@@ -32,6 +33,7 @@ const Main: React.FC = () => {
     startTransition(() => {
       setIsLoaded(true);
     });
+    setRiizeObj(loadedObj);
   }, []);
 
   return (
