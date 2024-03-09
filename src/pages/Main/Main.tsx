@@ -12,11 +12,12 @@ import siren from "../../assets/images/siren.gif";
 
 const Main: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const riizeObj = useGLTF("./models/riizeLogo.glb");
+  const [riizeObj, setRiizeObj] = useState<any>(null);
+  const loadedObj = useGLTF("./models/riizeLogo.glb");
 
   let options = {
     activeClass: "active",
-    anchors: ["sectionOne", "sectionTwo"],
+    anchors: ["rise", "realize"],
     arrowNavigation: false,
     className: "SectionContainer",
     delay: 800,
@@ -32,6 +33,8 @@ const Main: React.FC = () => {
     startTransition(() => {
       setIsLoaded(true);
     });
+    setRiizeObj(loadedObj);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

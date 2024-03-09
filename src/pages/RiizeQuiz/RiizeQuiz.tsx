@@ -13,12 +13,32 @@ interface Question {
 }
 
 const RiizeQuiz: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [fingerObj, setFingerObj] = useState<any>(null);
+
   const finger0 = useGLTF("./models/finger0.glb");
   const finger1 = useGLTF("./models/finger1.glb");
   const finger2 = useGLTF("./models/finger2.glb");
   const finger3 = useGLTF("./models/finger3.glb");
   const finger4 = useGLTF("./models/finger4.glb");
   const finger5 = useGLTF("./models/finger5.glb");
+
+  useEffect(() => {
+    if (incorrectCount === 0) {
+      setFingerObj(finger5);
+    } else if (incorrectCount === 1) {
+      setFingerObj(finger4);
+    } else if (incorrectCount === 2) {
+      setFingerObj(finger3);
+    } else if (incorrectCount === 3) {
+      setFingerObj(finger2);
+    } else if (incorrectCount === 4) {
+      setFingerObj(finger1);
+    } else if (incorrectCount === 5) {
+      setFingerObj(finger0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [questions] = useState<Question[]>([
     {
@@ -98,7 +118,6 @@ const RiizeQuiz: React.FC = () => {
       (userAnswer, index) => userAnswer !== questions[index].answer
     ).length;
     setIncorrectCount(incorrectCount);
-    // console.log("틀린 문항 수: ", incorrectCount);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers, currentQuestionIndex]);
 
