@@ -34,6 +34,7 @@ const Main: React.FC = () => {
       setIsLoaded(true);
     });
     setRiizeObj(loadedObj);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

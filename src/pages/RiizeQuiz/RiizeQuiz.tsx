@@ -13,6 +13,7 @@ interface Question {
 }
 
 const RiizeQuiz: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fingerObj, setFingerObj] = useState<any>(null);
 
   const finger0 = useGLTF("./models/finger0.glb");
@@ -36,7 +37,8 @@ const RiizeQuiz: React.FC = () => {
     } else if (incorrectCount === 5) {
       setFingerObj(finger0);
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [questions] = useState<Question[]>([
     {
@@ -116,7 +118,6 @@ const RiizeQuiz: React.FC = () => {
       (userAnswer, index) => userAnswer !== questions[index].answer
     ).length;
     setIncorrectCount(incorrectCount);
-    // console.log("틀린 문항 수: ", incorrectCount);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userAnswers, currentQuestionIndex]);
 
