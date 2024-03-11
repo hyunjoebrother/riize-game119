@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import SelectFooter from "../../components/SelectFooter/SelectFooter";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import cat from "../../assets/images/catGuitar.gif";
 
 interface Question {
