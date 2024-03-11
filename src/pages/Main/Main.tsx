@@ -48,7 +48,7 @@ const Main: React.FC = () => {
   return (
     <SectionsContainer {...options}>
       <div className="w-full h-full bg-black flex flex-col m-auto items-center">
-        <Header />
+        <Header isMain={true} />
         <Section>
           <section className="flex flex-col gap-6 items-center">
             <div className="w-screen h-screen mt-4 2xs:h-[340px] xs:h-[380px] 2sm:h-[400px] sm:h-[440px] tb:h-[480px] lg:h-[520px] flex items-center justify-center">
@@ -66,7 +66,7 @@ const Main: React.FC = () => {
                     PLAY GAME119
                   </button>
                 </a>
-                <a href="/riize">
+                <a href="/handgame">
                   <button className="xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-44 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-[1.125rem] xs:text-[1.125rem] 2sm:text-[1.25rem] text-[1.5rem] lg:text-[2.25rem] leading-[1.2] 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-blue-500 text-white">
                     PLAY ONLINE
                     <br />
