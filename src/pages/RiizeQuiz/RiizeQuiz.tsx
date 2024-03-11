@@ -209,7 +209,7 @@ const RiizeQuiz: React.FC = () => {
 
   return (
     <section className="w-full h-screen bg-black flex flex-col m-auto items-center">
-      <Header />
+      <Header isMain={true} />
       <div className="mt-10 w-full flex flex-col gap-6 items-center">
         <QuizCard
           quizNum={currentQuestionIndex + 1}
