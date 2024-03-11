@@ -99,7 +99,7 @@ const RiizeQuiz: React.FC = () => {
     },
     {
       id: 8,
-      content: "라이즈는 단체로 몰래 챌린지를 한 적이 있다",
+      content: "라이즈는 단체로 다른 아이돌 몰래 챌린지를 한 적이 있다",
       answer: false,
       info: "라이즈 쇼타로와 앤톤이 세븐틴 대기실 앞에서 몰래 '음악의 신' 챌린지를 했다",
     },
@@ -147,8 +147,10 @@ const RiizeQuiz: React.FC = () => {
           setShowMainPopup(true);
           setMainPopupContent("아쉬워요🥲");
           setPopupContent("땡!🚨");
+          localStorage.setItem("finished", "true");
         } else if (currentQuestionIndex === 9) {
           setShowMainPopup(true);
+          localStorage.setItem("finished", "true");
           if (incorrectCount < 5) {
             setMainPopupContent("🎊축하합니다🎊");
           } else {
@@ -162,6 +164,7 @@ const RiizeQuiz: React.FC = () => {
         setPopupInfo("");
         if (currentQuestionIndex === 9) {
           setShowMainPopup(true);
+          localStorage.setItem("finished", "true");
           if (incorrectCount < 5) {
             setMainPopupContent("🎊축하합니다🎊");
           } else {
@@ -177,6 +180,7 @@ const RiizeQuiz: React.FC = () => {
     if (incorrectCount === 5 && currentQuestionIndex !== 9) {
       setShowPopup(false);
       setShowMainPopup(true);
+      localStorage.setItem("finished", "true");
       setMainPopupContent("아쉬워요🥲");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
