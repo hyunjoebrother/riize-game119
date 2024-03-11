@@ -14,6 +14,14 @@ const Main: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [riizeObj, setRiizeObj] = useState<any>(null);
   const loadedObj = useGLTF("./models/riizeLogo.glb");
+  const [finished, setFinished] = useState<boolean>(false); // 119 finished
+
+  React.useEffect(() => {
+    const storedIsVisited = localStorage.getItem("finished");
+    if (storedIsVisited === "true") {
+      setFinished(true);
+    }
+  }, []);
 
   let options = {
     activeClass: "active",
@@ -51,14 +59,28 @@ const Main: React.FC = () => {
                 </Canvas>
               )}
             </div>
-            <a href="/riize">
-              <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
-                PLAY GAME119
-              </button>
-            </a>
-            {/* <button className="lg:my-24 w-56 h-14 lg:w-80 lg:h-24 flex flex-col justify-center items-center text-2xl lg:text-4xl rounded-2xl lg:rounded-3xl font-MainFont bg-blue-700 text-white">
-          <a href="/riize">PLAY ONLINE K-HANDGAME</a>
-        </button> */}
+            {finished ? (
+              <div className="flex flex-row 2xs:flex-col 2xs:gap-5 2xs:justify-center justify-between gap-2 sm:gap-8 tb:gap-10 lg:gap-20">
+                <a href="/riize">
+                  <button className="xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-44 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
+                    PLAY GAME119
+                  </button>
+                </a>
+                <a href="/riize">
+                  <button className="xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-44 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-[1.125rem] xs:text-[1.125rem] 2sm:text-[1.25rem] text-[1.5rem] lg:text-[2.25rem] leading-[1.2] 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-blue-500 text-white">
+                    PLAY ONLINE
+                    <br />
+                    K-HANDGAME
+                  </button>
+                </a>
+              </div>
+            ) : (
+              <div>
+                <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500 text-white">
+                  <a href="/riize">PLAY GAME119</a>
+                </button>
+              </div>
+            )}
           </section>
         </Section>
         <Section>
