@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import SelectFooter from "../../components/SelectFooter/SelectFooter";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import cat from "../../assets/images/catGuitar.gif";
 
 interface Question {
@@ -26,32 +26,33 @@ const RiizeQuiz: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fingerObj, setFingerObj] = useState<any>(null);
-
-  const finger0 = useGLTF("./models/finger0.glb");
-  const finger1 = useGLTF("./models/finger1.glb");
-  const finger2 = useGLTF("./models/finger2.glb");
-  const finger3 = useGLTF("./models/finger3.glb");
-  const finger4 = useGLTF("./models/finger4.glb");
-  const finger5 = useGLTF("./models/finger5.glb");
+  const finger5 = useGLTF("./models/finger5Sun.glb");
 
   useEffect(() => {
-    startTransition(() => {
-      if (incorrectCount === 0) {
-        setFingerObj(finger5);
-      } else if (incorrectCount === 1) {
-        setFingerObj(finger4);
-      } else if (incorrectCount === 2) {
-        setFingerObj(finger3);
-      } else if (incorrectCount === 3) {
-        setFingerObj(finger2);
-      } else if (incorrectCount === 4) {
-        setFingerObj(finger1);
-      } else if (incorrectCount === 5) {
-        setFingerObj(finger0);
-      }
-    });
+    setFingerObj(finger5);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (incorrectCount === 1) {
+      setFingerObj(finger4);
+    } else if (incorrectCount === 2) {
+      setFingerObj(finger3);
+    } else if (incorrectCount === 3) {
+      setFingerObj(finger2);
+    } else if (incorrectCount === 4) {
+      setFingerObj(finger1);
+    } else if (incorrectCount === 5) {
+      setFingerObj(finger0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const finger0 = useGLTF("./models/finger0Sun.glb");
+  const finger1 = useGLTF("./models/finger1Sun.glb");
+  const finger2 = useGLTF("./models/finger2Sun.glb");
+  const finger3 = useGLTF("./models/finger3Sun.glb");
+  const finger4 = useGLTF("./models/finger4Sun.glb");
 
   const [questions] = useState<Question[]>([
     {
@@ -229,7 +230,6 @@ const RiizeQuiz: React.FC = () => {
             <Canvas camera={{ position: [6, 10, -32] }}>
               <OrbitControls />
               <ambientLight intensity={3} />
-              <Environment preset="sunset" />
               {incorrectCount === 0 && (
                 <primitive scale={9} object={finger5.scene} />
               )}
