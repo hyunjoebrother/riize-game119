@@ -51,7 +51,7 @@ const Main: React.FC = () => {
         <Header />
         <Section>
           <section className="flex flex-col gap-6 items-center">
-            <div className="w-screen h-screen mt-10 2xs:h-[380px] xs:h-[420px] 2sm:h-[440px] sm:h-[460px] tb:h-[480px] lg:h-[520px] flex items-center justify-center">
+            <div className="w-screen h-screen mt-4 2xs:h-[340px] xs:h-[380px] 2sm:h-[400px] sm:h-[440px] tb:h-[480px] lg:h-[520px] flex items-center justify-center">
               {isLoaded && (
                 <Canvas camera={{ position: [40, 16, 18] }}>
                   <OrbitControls />
