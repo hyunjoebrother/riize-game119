@@ -51,7 +51,7 @@ const Main: React.FC = () => {
         <Header />
         <Section>
           <section className="flex flex-col gap-6 items-center">
-            <div className="w-screen h-screen 2xs:h-[440px] xs:h-[500px] 2sm:h-[500px] sm:h-[480px] tb:h-[500px] lg:h-[560px] flex items-center justify-center">
+            <div className="w-screen h-screen mt-10 2xs:h-[380px] xs:h-[420px] 2sm:h-[440px] sm:h-[460px] tb:h-[480px] lg:h-[520px] flex items-center justify-center">
               {isLoaded && (
                 <Canvas camera={{ position: [40, 16, 18] }}>
                   <OrbitControls />
@@ -84,8 +84,8 @@ const Main: React.FC = () => {
           </section>
         </Section>
         <Section>
-          <section className="2xs:mt-0 xs:mt-0 2sm:mt-0 sm:mt-0 lg:mt-12 lg:px-16 w-full h-screen flex flex-col lg:flex-row 2xs:gap-0 xs:gap-6 2sm:gap-14 sm:gap-6 tb:gap-16 lg:gap-3 items-center justify-center">
-            <div className="w-full lg:w-1/2 h-auto lg:h-64 my-12 flex flex-col items-center justify-start">
+          <section className="2xs:mt-0 xs:mt-0 2sm:mt-0 sm:mt-0 lg:mt-12 lg:px-16 w-full h-screen flex flex-col lg:flex-row 2xs:gap-0 xs:gap-6 2sm:gap-10 sm:gap-6 tb:gap-12 lg:gap-3 items-center justify-center">
+            <div className="w-full lg:w-1/2 h-auto lg:h-64 mb-8 flex flex-col items-center justify-start">
               <h3 className="2xs:text-xl xs:text-2xl 2sm:text-2xl sm:text-3xl text-4xl text-white 2xs:mb-4 xs:mb-4 2sm:mb-6 sm:mb-6 tb:mb-10 lg:mb-24 font-MainFont">
                 🎸 Get A Guitar 🎸
               </h3>
