@@ -13,16 +13,16 @@ export const shareKakao = () => {
           "손병호게임 (K-HANDGAME) 3D로 즐기기! 초대장 받은 사람 접어✋🏻😎",
         imageUrl: "https://riize-game119.pages.dev/logo192.png",
         link: {
-          mobileWebUrl: "https://riize-game119.pages.dev/handgame",
-          webUrl: "https://riize-game119.pages.dev/handgame",
+          mobileWebUrl: "https://riize-game119.pages.dev/",
+          webUrl: "https://riize-game119.pages.dev/",
         },
       },
       buttons: [
         {
           title: "손가락 접을 사람✋🏻",
           link: {
-            mobileWebUrl: "https://riize-game119.pages.dev/handgame",
-            webUrl: "https://riize-game119.pages.dev/handgame",
+            mobileWebUrl: "https://riize-game119.pages.dev/",
+            webUrl: "https://riize-game119.pages.dev/",
           },
         },
       ],

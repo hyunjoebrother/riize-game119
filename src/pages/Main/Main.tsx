@@ -82,7 +82,7 @@ const Main: React.FC = () => {
               </div>
             ) : (
               <div>
-                <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-orange-500">
+                <button className="2xs:my-6 xs:my-16 2sm:my-20 sm:my-28 tb:my-32 lg:my-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-48 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-lg xs:text-lg 2sm:text-xl text-2xl lg:text-4xl 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl text-white font-MainFont bg-orange-500">
                   <a href="/riize">PLAY GAME119</a>
                 </button>
               </div>
