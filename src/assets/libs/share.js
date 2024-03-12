@@ -11,7 +11,7 @@ export const shareKakao = () => {
         title: "3D 손병호게임 (K-HANDGAME)",
         description:
           "손병호게임 (K-HANDGAME) 3D로 즐기기! 초대장 받은 사람 접어✋🏻😎",
-        imageUrl: "https://riize-game119.pages.dev/logo192.png",
+        imageUrl: "https://riize-game119.pages.dev/ogImg.png",
         link: {
           mobileWebUrl: "https://riize-game119.pages.dev/",
           webUrl: "https://riize-game119.pages.dev/",
