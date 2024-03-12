@@ -1,15 +1,17 @@
 import React, { useState, useEffect, startTransition } from "react";
 import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
+import Footer from "../../components/Footer/Footer";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import cat from "../../assets/images/catGuitar.gif";
-
 const HandGame: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [innerCount, setInnerCount] = useState(0);
 
   useEffect(() => {
+    localStorage.setItem("finished", "true");
+
     startTransition(() => {
       setTimeout(() => {
         setIsLoaded(true);
@@ -105,22 +107,20 @@ const HandGame: React.FC = () => {
       </div>
       <button
         onClick={handleButtonClick}
-        className="w-[72px] h-[72px] 2sm:w-20 2sm:h-20 sm:w-16 sm:h-16 tb:w-20 tb:h-20 lg:w-20 lg:h-20 bg-green-500 rounded-full text-white font-bold 2xs:text-3xl xs:text-3xl 2sm:text-3xl text-xl"
+        className="py-2 tb:py-3 lg:py-3 2xs:w-28 xs:w-[128px] 2sm:w-36 sm:w-40 tb:w-44 lg:w-48 bg-red-500 rounded-full text-white font-bold 2xs:text-lg xs:text-xl 2sm:text-2xl text-2xl"
       >
         접어!
       </button>
-      <div className="w-full mt-6 p-4 bg-white text-blue-700 flex flex-row justify-between">
-        <div>튜토리얼 [RIIZE GAME119 하러가기]</div>
-        <div>친구한테 SNS 공유하기</div>
-      </div>
+      <Footer />
+
       {showPopup && (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75">
           <div className="w-auto h-auto 2xs:min-w-56 xs:min-w-56 2sm:min-w-64 min-w-80 2xs:max-w-[228px] xs:max-w-[288px] 2sm:max-w-[312px] sm:max-w-[380px] tb:max-w-[380px] lg:max-w-[416px] min-h-32 p-4 bg-white rounded-md flex flex-col items-center justify-center">
-            <p className="text-xl lg:text-2xl font-bold">
-              손가락을 모두 접었습니다!
+            <p className="text-center text-xl lg:text-2xl font-bold">
+            🥲<br />손가락을 모두 접었습니다!
             </p>
             <a href="/">
-              <button className="2xs:mt-6 xs:mt-6 mt-8 px-4 py-2 text-sm lg:text-xl bg-blue-500 text-white rounded-md">
+              <button className="2xs:mt-4 xs:mt-4 mt-6 px-4 py-2 text-sm lg:text-xl bg-blue-500 text-white font-bold rounded-md">
                 메인으로 이동하기
               </button>
             </a>
