@@ -67,12 +67,12 @@ const Main: React.FC = () => {
                       PLAY GAME119
                     </button>
                   </a>
-                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">본격 라이즈 퀴즈!</p>
+                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">본격 라이즈 OX퀴즈!</p>
                 </div>
                 <div className="flex flex-col gap-2 justify-start items-center  text-white">
                   <a href="/handgame">
                     <button className="xs:mt-16 2sm:mt-20 sm:mt-28 tb:mt-32 lg:mt-24 2xs:w-40 2xs:h-12 xs:w-40 xs:h-12 2sm:w-44 2sm:h-14 sm:w-56 sm:h-16 tb:w-64 tb:h-20 lg:w-80 lg:h-24 flex flex-col justify-center items-center 2xs:text-[1.125rem] xs:text-[1.125rem] 2sm:text-[1.25rem] text-[1.5rem] lg:text-[2.25rem] leading-[1.2] 2sm:rounded-[28px] rounded-3xl lg:rounded-3xl font-MainFont bg-blue-500 text-white">
-                      PLAY ONLINE
+                      PLAY
                       <br />
                       K-HANDGAME
                     </button>

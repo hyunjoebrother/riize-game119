@@ -2,26 +2,27 @@ export const shareKakao = () => {
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init("84729ad99d624bfd077bed56c6e2a4d6");
+      kakao.init("4b6122f83be0277c63fc68efb9f08436");
     }
 
     kakao.Link.sendDefault({
       objectType: "feed",
       content: {
-        title: "생카데이",
-        description: "생카 정보는, 생카데이로 한 번에! 같이 생일카페 갈래?!🎶",
-        imageUrl: "https://saengcaday.com/og-image.jpg",
+        title: "3D 손병호게임 (K-HANDGAME)",
+        description:
+          "손병호게임 (K-HANDGAME) 3D로 즐기기! 초대장 받은 사람 접어✋🏻😎",
+        imageUrl: "https://riize-game119.pages.dev/logo192.png",
         link: {
-          mobileWebUrl: "https://saengcaday.com",
-          webUrl: "https://saengcaday.com",
+          mobileWebUrl: "https://riize-game119.pages.dev/handgame",
+          webUrl: "https://riize-game119.pages.dev/handgame",
         },
       },
       buttons: [
         {
-          title: "생일카페 구경하기🎂🥳",
+          title: "손가락 접을 사람✋🏻",
           link: {
-            mobileWebUrl: "https://saengcaday.com",
-            webUrl: "https://saengcaday.com",
+            mobileWebUrl: "https://riize-game119.pages.dev/handgame",
+            webUrl: "https://riize-game119.pages.dev/handgame",
           },
         },
       ],
@@ -30,8 +31,9 @@ export const shareKakao = () => {
 };
 
 export const shareTwitter = () => {
-  let sendText = "생카 정보는, 생카데이로 한 번에! 같이 생일카페 갈래?!🥳🎶";
-  let sendUrl = "https://saengcaday.com";
+  let sendText =
+    "손병호게임 (K-HANDGAME) 3D로 즐기기! 초대장 받은 사람 접어✋🏻😎";
+  let sendUrl = "https://riize-game119.pages.dev/handgame";
   window.open(
     "https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl
   );
