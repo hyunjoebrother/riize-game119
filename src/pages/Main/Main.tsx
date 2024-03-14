@@ -67,7 +67,9 @@ const Main: React.FC = () => {
                       PLAY GAME119
                     </button>
                   </a>
-                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">본격 라이즈 OX퀴즈!</p>
+                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">
+                    본격 라이즈 OX퀴즈!
+                  </p>
                 </div>
                 <div className="flex flex-col gap-2 justify-start items-center  text-white">
                   <a href="/handgame">
@@ -77,7 +79,9 @@ const Main: React.FC = () => {
                       K-HANDGAME
                     </button>
                   </a>
-                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">본격 온라인 손병호 게임!</p>
+                  <p className="2xs:text-[10px] xs:text-xs text-sm tb:text-lg lg:text-xl font-bold">
+                    본격 3D 손병호 게임!
+                  </p>
                 </div>
               </div>
             ) : (

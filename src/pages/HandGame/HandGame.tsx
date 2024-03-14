@@ -49,7 +49,7 @@ const HandGame: React.FC = () => {
     startTransition(() => {
       setTimeout(() => {
         setIsLoaded(true);
-      }, 1200);
+      }, 800);
     });
   }, []);
 

@@ -47,7 +47,7 @@ const RiizeQuiz: React.FC = () => {
     startTransition(() => {
       setTimeout(() => {
         setIsLoaded(true);
-      }, 1200);
+      }, 800);
     });
   }, []);
 
