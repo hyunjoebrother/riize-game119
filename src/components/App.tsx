@@ -1,5 +1,6 @@
 import React, { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./Translation/i18n";
 
 const Main = lazy(() => import("../pages/Main/Main"));
 const RiizeQuiz = lazy(() => import("../pages/RiizeQuiz/RiizeQuiz"));

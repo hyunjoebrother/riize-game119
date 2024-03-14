@@ -14,7 +14,6 @@ module.exports = {
       },
       fontFamily: {
         MainFont: ["MainFont_Regular"],
-        MainFontItalic: ["MainFont_Italic"],
       },
     },
   },

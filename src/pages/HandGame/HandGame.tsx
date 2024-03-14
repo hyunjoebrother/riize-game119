@@ -1,13 +1,47 @@
 import React, { useState, useEffect, startTransition } from "react";
+import { useTranslation, Trans } from "react-i18next";
+import { useLanguage } from "../../components/Translation/languageContext";
 import Header from "../../components/Header/Header";
 import QuizCard from "../../components/QuizCard/QuizCard";
 import Footer from "../../components/Footer/Footer";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import cat from "../../assets/images/catGuitar.gif";
+
 const HandGame: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [innerCount, setInnerCount] = useState(0);
+  const [sampleContent, setSampleContent] = useState("");
+
+  const { language, changeLanguage } = useLanguage();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      changeLanguage(savedLanguage);
+      i18n.changeLanguage(savedLanguage);
+      if (savedLanguage === "kr") {
+        setSampleContent("[플레이어의 질문에 해당하면 손가락을 접으세요!]");
+      } else if (savedLanguage === "en") {
+        setSampleContent(
+          "[Fold your finger if it corresponds to the player's question!!]"
+        );
+      }
+    } else {
+      const defaultLanguage = "kr";
+      localStorage.setItem("language", defaultLanguage);
+      changeLanguage(defaultLanguage);
+      i18n.changeLanguage(defaultLanguage);
+    }
+  }, [changeLanguage, i18n]);
+
+  const handleToggleLanguage = () => {
+    const newLanguage = language === "kr" ? "en" : "kr";
+    changeLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
+  };
 
   useEffect(() => {
     localStorage.setItem("finished", "true");
@@ -63,10 +97,18 @@ const HandGame: React.FC = () => {
   return (
     <section className="w-full h-screen bg-black flex flex-col m-auto items-center">
       <Header isMain={false} />
-      <div className="mt-10 w-full flex flex-col gap-6 items-center">
+      <div className="w-full flex justify-end mr-10 sm:mr-16 tb:mr-32 lg:mr-40">
+        <h3
+          onClick={handleToggleLanguage}
+          className="text-xs 2sm:text-sm sm:text-lg tb:text-xl lg:text-xl text-orange-600 font-bold font-MainFont"
+        >
+          <Trans i18nKey="translations:English">GET A ENG</Trans>
+        </h3>
+      </div>
+      <div className="mt-4 w-full flex flex-col gap-6 items-center">
         <QuizCard
           quizNum={currentQuestionIndex + 1}
-          quizContent="[플레이어의 질문에 해당하면 손가락을 접으세요!]"
+          quizContent={sampleContent}
         />
       </div>
       <div className="2xs:mt-8 xs:mt-6 mt-10 tb:mt-12 lg:mt-20 lg:mb-4">
@@ -109,7 +151,7 @@ const HandGame: React.FC = () => {
         onClick={handleButtonClick}
         className="py-2 tb:py-3 lg:py-3 2xs:w-28 xs:w-[128px] 2sm:w-36 sm:w-40 tb:w-44 lg:w-48 bg-red-500 rounded-full text-white font-bold 2xs:text-lg xs:text-xl 2sm:text-2xl text-2xl"
       >
-        접어!
+        <Trans i18nKey="translations:Fold">접어!</Trans>
       </button>
       <Footer />
 
@@ -117,11 +159,15 @@ const HandGame: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75">
           <div className="w-auto h-auto 2xs:min-w-56 xs:min-w-56 2sm:min-w-64 min-w-80 2xs:max-w-[228px] xs:max-w-[288px] 2sm:max-w-[312px] sm:max-w-[380px] tb:max-w-[380px] lg:max-w-[416px] min-h-32 p-4 bg-white rounded-md flex flex-col items-center justify-center">
             <p className="text-center text-xl lg:text-2xl font-bold">
-            🥲<br />손가락을 모두 접었습니다!
+              🥲
+              <br />
+              <Trans i18nKey="translations:FoldEnd">
+                손가락을 모두 접었습니다!
+              </Trans>
             </p>
             <a href="/">
               <button className="2xs:mt-4 xs:mt-4 mt-6 px-4 py-2 text-sm lg:text-xl bg-blue-500 text-white font-bold rounded-md">
-                메인으로 이동하기
+                <Trans i18nKey="translations:GoToMain">메인으로 이동하기</Trans>
               </button>
             </a>
           </div>
