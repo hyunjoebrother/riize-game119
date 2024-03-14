@@ -8,6 +8,7 @@ interface QuizCardProps {
 }
 
 const QuizCard: React.FC<QuizCardProps> = ({ quizNum, quizContent }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { language, changeLanguage } = useLanguage();
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");

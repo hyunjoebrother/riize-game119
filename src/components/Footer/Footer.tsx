@@ -11,6 +11,7 @@ import twitter from "../../assets/images/icon-twitter.png";
 import clip from "../../assets/images/icon-clip.png";
 
 const Footer: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { language } = useLanguage();
 
   return (
