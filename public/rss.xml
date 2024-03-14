@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>3D 손병호게임 (K-HANDGAME)</title>
+        <link>https://riize-game119.pages.dev/</link>
+        <description>손병호게임 (K-HANDGAME) 3D로 즐기기! 초대장 받은 사람 접어✋🏻😎</description>
+
+        <item>
+            <title>RIIZE GAME119</title>
+            <link>https://riize-game119.pages.dev/riize</link>
+            <description>손병호게임으로 라이즈퀴즈하기</description>
+            <pubDate>14 Mar 2024</pubDate>
+            <guid>https://riize-game119.pages.dev/</guid>
+        </item>
+        <item>
+            <title>3D 손병호게임</title>
+            <link>https://riize-game119.pages.dev/handgame</link>
+            <description>친구들과 함께 손병호게임하기</description>
+            <pubDate>14 Mar 2024</pubDate>
+            <guid>https://riize-game119.pages.dev/</guid>
+        </item>
+    </channel>
+</rss>
